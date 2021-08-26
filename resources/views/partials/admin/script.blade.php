@@ -34,4 +34,7 @@
 
 <script src="{{asset('assets/js/bootstrap-maxlength.js')}}"></script>
 
+<script src="{{asset('assets/vendors/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
+<script src="{{asset('assets/js/tags-input.js')}}"></script>
+
 

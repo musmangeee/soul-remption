@@ -1,6 +1,7 @@
 @extends('layouts.account')
 
 @section('content')
+@include('modals.send-code')
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
@@ -17,6 +18,9 @@
                 <div class="card-body">
                     <h6 class="card-title text-primary">View Subscribers</h6>
                     <div class="text-right">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Send Code
+</button>
                         </div>
                     <p class="card-description text-primary">All the Subscribers are listed here.</p>
                     <div class="table-responsive">
@@ -30,6 +34,9 @@
                                    Subscriber Email
                                 </th>
                                 <th class="text-primary">
+                                  Code
+                                </th>
+                                <th class="text-primary">
                                    Action
                                 </th>
                             </tr>
@@ -37,13 +44,15 @@
                             <tbody>
                                 
                             @foreach($users as $data)
-                         
                                 <tr>
                                     <td>
                                        {{ $data->id }}
                                     </td>
                                     <td>
                                        {{ $data->email}}
+                                    </td>
+                                    <td>
+                                       {{ $data->code}}
                                     </td>
                                    <td>
                                       <form action="{{route('deletesubscribers', $data->id)}}" method="POST">

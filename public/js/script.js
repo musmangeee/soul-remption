@@ -52,4 +52,29 @@ $(document).ready(function(){
         $(this).addClass('blurEffect');
       $('.content').show();
     });
+
+    // Subscription Form
+    
+   
+  
+  
+   $(".subscription-form").on('submit', function(e){
+    e.preventDefault();
+    let form = $(this);
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+        // console.log($(this).serialize(); 
+          $.ajax({
+            type:'POST',
+            url:'subscription',
+            data:form.serialize(),
+            success:function(data){
+                
+                $('#subscription-modal').modal('show');
+            }
+         });
+   });
 });

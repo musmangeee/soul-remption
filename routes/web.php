@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\MailingListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,12 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('media', [FrontendController::class, 'media']);
 Route::get('movie', [FrontendController::class, 'movie']);
 Route::get('watch', [FrontendController::class, 'watch']);
+Route::post('subscription', [SubscriberController::class, 'subscribe']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/view_sunscriber', [SubscriberController::class, 'view_sunscriber'])->name('findsubscribers');
+Route::delete('/delete_sunscriber{id}', [SubscriberController::class, 'delete_sunscriber'])->name('deletesubscribers');
+Route::get('/view_code', [MailingListController::class, 'index'])->name('codepage');
+Route::post('/send_code', [MailingListController::class, 'store_code'])->name('storecode');

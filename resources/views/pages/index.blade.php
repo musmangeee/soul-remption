@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+@include('modals.subscriptionsucces')
     <!-- Header Starts -->
     <!-- <header class="hero-header">
         <div class="container text-right">
@@ -8,6 +10,7 @@
                 <h6>A healing drama by Richard J. Burns</h6>
                 <p>The film that can heal you while you watch</p>
         </div>
+
     </header> -->
     <!-- Header Ends -->
 
@@ -122,11 +125,11 @@
                 <p>Join us in this immersive experience. Sign up for screenings and virtual healings</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <form>
+                        <form class="subscription-form">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Email Address">
+                                <input type="email"  name="email" class="form-control" placeholder="Email Address">
                                 <div class="input-group-append">
-                                    <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
+                                    <button  class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                 </div>
                             </div>
                         </form>
@@ -231,10 +234,14 @@
                     Join us for our next event.</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <form>
-
+                    @if(session()->has('Success'))
+                 <div class="alert alert-success response">
+                  {{ session()->get('Success') }}
+                 </div>
+                @endif
+                        <form class="subscription-form">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Email Address">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                 </div>
@@ -428,9 +435,14 @@
                     as a bonus. These scenes are amazing. They were cut because the films was 3 hours long.</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <form method="POST">
+                    @if(session()->has('Success'))
+                 <div class="alert alert-success response">
+                  {{ session()->get('Success') }}
+                 </div>
+                @endif
+                        <form class="subscription-form">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Email Address">
+                                <input type="email"  name="email" class="form-control" placeholder="Email Address">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                 </div>
@@ -508,13 +520,18 @@
                     <img src="{{ asset('img/about-pic.jpg') }}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 experience-wrapper">
+                @if(session()->has('Success'))
+                 <div class="alert alert-success response">
+                  {{ session()->get('Success') }}
+                 </div>
+                @endif
 
-                    <form>
+                    <form class="subscription-form">
                         <h2>Join this immersive experience</h2>
 
                             <div class="col-md-10 px-0 mb-3">
                                 <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Email Address">
+                                    <input type="email" name="email" class="form-control" placeholder="Email Address">
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                     </div>
@@ -543,6 +560,6 @@
             </div>
         </div>
     </footer>
-
-
+   
 @endsection
+
