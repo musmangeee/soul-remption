@@ -3,22 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Video_Trailer;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('pages.index');
+        $data = Video_Trailer::first();
+        return view('pages.index', ['users' => $data]);
     }
 
     public function media()
     {
-        return view('pages.media');
+        $data = Video_Trailer::first();
+        return view('pages.media',['users' => $data]);
     }
 
     public function movie()
     {
-        return view('pages.movie');
+        $data = Video_Trailer::first();
+        return view('pages.movie',['users' => $data]);
     }
 
     public function watch()

@@ -5,16 +5,16 @@
       <div class="modal-body">
       <form action="{{route('storecode')}}" method="POST" novalidate>
         @csrf
-        <h6 class="card-title">Send Code</h6>
+        <h6 class="card-title">SEND CODE</h6>
 			<p class="card-description"> <a href="https://www.npmjs.com/package/jquery-tags-input" target="_blank"></a></p>
-				<p class="mb-2">Enter Email to Send the Code</p>
+				<p class="mb-2">ENTER EMAIL TO SEND THE CODE</p>
 				<div>
 					<input type="email" name="tags" id="tags" placeholder="john.doe@company.com" required/>
 				</div>
           </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Send Code</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+        <button type="submit" class="btn btn-primary">SEND CODE</button>
       </div>
       </form>
     </div>

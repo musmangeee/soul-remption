@@ -143,10 +143,9 @@
     <!-- Traier Section -->
     <section class="trailer-section section-border">
         <div class="container text-center">
-
-            <video style="width: 100%;" controls>
-                <source src="Video/Soul Redemption Trailer July 8th Final .mov" type="video/mp4">
-                <source src="movie.ogg" type="video/ogg">
+            <video style="width: 100%;" controls poster="{{ URL::asset('public/'. $users->trailer_poster)}}" autobuffer="true" >
+                <source src="{{ URL::asset('public/'. $users->trailer)}}" type="video/mp4">
+                <!-- <source src="movie.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
             </video>
 

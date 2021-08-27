@@ -32,6 +32,12 @@
                     <span class="link-title">Send Code</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('videoserver')}}" class="nav-link">
+                    <i class="link-icon" data-feather="calendar"></i>
+                    <span class="link-title">Video Server</span>
+                </a>
+            </li>
             <li class="nav-item nav-category">Components</li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#uiComponents" role="button" aria-expanded="false"

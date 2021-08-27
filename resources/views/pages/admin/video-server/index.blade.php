@@ -2,6 +2,8 @@
 
 @section('content')
 @include('modals.send-code')
+@include('modals.edit-video')
+@include('modals.edit-trailer')
 <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
@@ -18,9 +20,12 @@
                 <div class="card-body">
                     <h6 class="card-title text-primary">View Subscribers</h6>
                     <div class="text-right">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                      SEND CODE
-                     </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edittrailer">
+                          EDIT TRAILER
+                    </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editvideo">
+                          EDIT VIDEO    
+                    </button>
                         </div>
                     <p class="card-description text-primary">All the Subscribers are listed here.</p>
                     <div class="table-responsive">
@@ -31,13 +36,16 @@
                                     #
                                 </th>
                                 <th class="text-primary">
-                                   Subscriber Email
+                                   Trailer
                                 </th>
                                 <th class="text-primary">
-                                  Code
+                                   Trailer Poster
                                 </th>
                                 <th class="text-primary">
-                                   Action
+                                    Video
+                                </th>
+                                <th class="text-primary">
+                                    Video Poster
                                 </th>
                             </tr>
                             </thead>
@@ -49,18 +57,17 @@
                                        {{ $data->id }}
                                     </td>
                                     <td>
-                                       {{ $data->email}}
+                                       {{ $data->trailer}}
                                     </td>
                                     <td>
-                                       {{ $data->code}}
+                                       {{ $data->trailer_poster}}
                                     </td>
-                                   <td>
-                                      <form action="{{route('deletesubscribers', $data->id)}}" method="POST">
-                                      @csrf
-                                      @method('DELETE')
-                                      <button type="submit" class="btn btn-danger">Delete</button>
-                                      </form>
-                                   </td>
+                                    <td>
+                                       {{ $data->video}}
+                                    </td>
+                                    <td>
+                                       {{ $data->video_poster}}
+                                    </td>
                                 </tr>
                     
                             @endforeach

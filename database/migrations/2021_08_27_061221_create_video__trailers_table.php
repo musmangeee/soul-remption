@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMailingListsTable extends Migration
+class CreateVideoTrailersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateMailingListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mailing_lists', function (Blueprint $table) {
+        Schema::create('video__trailers', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
-            $table->string('code')->unique();
-            $table->string('days');
-            $table->string('time');
+            $table->string('video')->nullable();
+            $table->string('trailer')->nullable();
+            $table->string('video_poster')->nullable();
+            $table->string('trailer_poster')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateMailingListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mailing_lists');
+        Schema::dropIfExists('video__trailers');
     }
 }
