@@ -23,7 +23,7 @@ Route::get('movie', [FrontendController::class, 'movie']);
 Route::get('watch', [FrontendController::class, 'watch']);
 Route::post('subscription', [SubscriberController::class, 'subscribe']);
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/view_sunscriber', [SubscriberController::class, 'view_sunscriber'])->name('findsubscribers');
@@ -34,4 +34,12 @@ Route::get('/video_server', [VideoServerController::class, 'video_server'])->nam
 Route::post('/store_video', [VideoServerController::class, 'store_video'])->name('storevideo');
 Route::post('/store_trailer', [VideoServerController::class, 'store_trailer'])->name('storrtrailer');
 Route::post('/verify_code', [VideoServerController::class, 'verify_code'])->name('verifycode');
+
+
+
+/*
+ | -----------------------------------------------------------
+ | Profile Routes
+ | -----------------------------------------------------------
+ */
 

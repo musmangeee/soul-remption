@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('modals.subscriptionsucces')
+    @include('modals.subscriptionsucces')
     <!-- Header Starts -->
     <!-- <header class="hero-header">
         <div class="container text-right">
@@ -13,9 +13,6 @@
 
     </header> -->
     <!-- Header Ends -->
-
-
-
 
 
     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
@@ -127,9 +124,9 @@
                     <div class="col-md-6">
                         <form class="subscription-form">
                             <div class="input-group">
-                                <input type="email"  name="email" class="form-control" placeholder="Email Address">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address">
                                 <div class="input-group-append">
-                                    <button  class="btn btn-secondary px-4" type="submit">Subscribe</button>
+                                    <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                 </div>
                             </div>
                         </form>
@@ -143,8 +140,9 @@
     <!-- Traier Section -->
     <section class="trailer-section section-border">
         <div class="container text-center">
-            <video style="width: 100%;" controls poster="{{ URL::asset('public/'. $users->trailer_poster)}}" autobuffer="true" >
-                <source src="{{ URL::asset('public/'. $users->trailer)}}" type="video/mp4">
+            <video style="width: 100%;" controls poster="{{ URL::asset('public/'. ( $users->trailer_poster ?? '' ) )}}"
+                   autobuffer="true">
+                <source src="{{ URL::asset('public/'. ($users->trailer ?? '') )}}" type="video/mp4">
                 <!-- <source src="movie.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
             </video>
@@ -233,11 +231,11 @@
                     Join us for our next event.</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                    @if(session()->has('Success'))
-                 <div class="alert alert-success response">
-                  {{ session()->get('Success') }}
-                 </div>
-                @endif
+                        @if(session()->has('Success'))
+                            <div class="alert alert-success response">
+                                {{ session()->get('Success') }}
+                            </div>
+                        @endif
                         <form class="subscription-form">
                             <div class="input-group">
                                 <input type="email" name="email" class="form-control" placeholder="Email Address">
@@ -434,14 +432,14 @@
                     as a bonus. These scenes are amazing. They were cut because the films was 3 hours long.</p>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                    @if(session()->has('Success'))
-                 <div class="alert alert-success response">
-                  {{ session()->get('Success') }}
-                 </div>
-                @endif
+                        @if(session()->has('Success'))
+                            <div class="alert alert-success response">
+                                {{ session()->get('Success') }}
+                            </div>
+                        @endif
                         <form class="subscription-form">
                             <div class="input-group">
-                                <input type="email"  name="email" class="form-control" placeholder="Email Address">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                 </div>
@@ -519,23 +517,23 @@
                     <img src="{{ asset('img/about-pic.jpg') }}" class="img-fluid" alt="">
                 </div>
                 <div class="col-md-7 experience-wrapper">
-                @if(session()->has('Success'))
-                 <div class="alert alert-success response">
-                  {{ session()->get('Success') }}
-                 </div>
-                @endif
+                    @if(session()->has('Success'))
+                        <div class="alert alert-success response">
+                            {{ session()->get('Success') }}
+                        </div>
+                    @endif
 
                     <form class="subscription-form">
                         <h2>Join this immersive experience</h2>
 
-                            <div class="col-md-10 px-0 mb-3">
-                                <div class="input-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Email Address">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
-                                    </div>
+                        <div class="col-md-10 px-0 mb-3">
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
                                 </div>
                             </div>
+                        </div>
 
                         <p>DIRECTORS NOTE: The energy in this film is real. Those who are open to recieving will benefit
                             from watching Soul Redemption. This film will be the first of three I will be creating.
@@ -559,6 +557,6 @@
             </div>
         </div>
     </footer>
-   
+
 @endsection
 
