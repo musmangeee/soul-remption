@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $('#watchvideo').modal({backdrop: 'static', keyboard: false}) 
+    $("#watchvideo").modal('show');
     var owl = $('.owl-carousel');
 
     $(".fancybox").fancybox({
@@ -52,4 +54,52 @@ $(document).ready(function(){
         $(this).addClass('blurEffect');
       $('.content').show();
     });
+
+    // Subscription Form
+    
+   
+  
+  
+   $(".subscription-form").on('submit', function(e){
+    e.preventDefault();
+    let form = $(this);
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+        // console.log($(this).serialize(); 
+          $.ajax({
+            type:'POST',
+            url:'subscription',
+            data:form.serialize(),
+            success:function(data){
+                
+                $('#subscription-modal').modal('show');
+            }
+         });
+   });
+
+   $("#send-code").on('submit', function(e){
+    e.preventDefault();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+        // console.log($(this).serialize(); 
+          $.ajax({
+            type:'POST',
+            url: 'verify_code',
+            data:{code:$("input[name=code]").val()},
+            success:function(data){
+              if(data== true){
+                $('#watchvideo').hide();
+              }
+                // $('#subscription-modal').modal('show');
+            }
+         });
+   });
+  
 });
+

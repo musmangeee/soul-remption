@@ -60,7 +60,11 @@
     <!-- Traier Section -->
     <section class="trailer-section bg-purple section-border-black">
         <div class="container text-center">
-            <iframe src="https://www.youtube.com/embed/fmUkvAr8fRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video style="width: 100%;" controls poster="{{ URL::asset('public/'. $users->trailer_poster)}}" autobuffer="true" >
+                <source src="{{ URL::asset('public/'. $users->trailer)}}" type="video/mp4">
+                <!-- <source src="movie.ogg" type="video/ogg"> -->
+                Your browser does not support the video tag.
+            </video>
 
             <button class="btn-energy">Did you feel the energy?</button>
         </div>

@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css') }}">
 <!-- end plugin css for this page -->
 <!-- inject:css -->
+
+<link rel="stylesheet" href="{{asset('assets/vendors/jquery-tags-input/jquery.tagsinput.min.css')}}">
 <link rel="stylesheet" href="{{ asset('assets/fonts/feather-font/css/iconfont.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
 <!-- endinject -->

@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+@include('modals.watch-video')
     <!-- Header Starts -->
-    <header class="hero-header full-screen-player">
-        <video controls poster="img/poster.jpg" autobuffer="true" >
-            <source src="Video/Soul%20Redemption%20Trailer%20July%208th%20Final%20.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+    
+    <header id="watchvideo" class="full-screen-player">
+        <video style="width: 100%;" controls poster="{{ URL::asset('public/'. $users->video_poster)}}" autobuffer="true" >
+                <source src="{{ URL::asset('public/'. $users->video)}}" type="video/mp4">
+                <!-- <source src="movie.ogg" type="video/ogg"> -->
+                Your browser does not support the video tag.
         </video>
     </header>
     <!-- Header Ends -->
