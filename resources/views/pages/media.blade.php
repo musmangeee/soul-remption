@@ -60,7 +60,7 @@
     <!-- Traier Section -->
     <section class="trailer-section bg-purple section-border-black">
         <div class="container text-center">
-        <video style="width: 100%;" controls poster="{{ URL::asset('public/'. $users->trailer_poster)}}" autobuffer="true" >
+        <video style="width: 100%;" controls poster="{{ URL::asset('public/'. ( $users->trailer_poster ?? ''))}}" autobuffer="true" >
                 <source src="{{ URL::asset('public/'. $users->trailer)}}" type="video/mp4">
                 <!-- <source src="movie.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.

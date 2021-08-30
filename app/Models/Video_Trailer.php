@@ -9,4 +9,5 @@ class Video_Trailer extends Model
 {
     use HasFactory;
     Protected $fillabele = ['video', 'trailer', 'video_poster', 'trailer_poster'];
+    
 }

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use Carbon\Carbon;
+use App\Models\MailingList;
 use Illuminate\Http\Request;
 use App\Models\Video_Trailer;
 use App\Http\Requests\verifycodeRequest;
-use App\Models\MailingList;
-use DB;
 
 class VideoServerController extends Controller
 {
@@ -15,46 +16,108 @@ class VideoServerController extends Controller
        return view('pages.admin.video-server.index', ['users' => $data]);
     }
     public function store_video(Request $request){
-        if ($file = $request->file('video')) {
-            $filename = time() . $file->getClientOriginalName();
-            $file->move('public', $filename);
-            $video = $filename;
+
+        $video = Video_Trailer::first();
+        
+        if($video){
+
+        
+             if ($file = $request->file('video')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['video'] = $filename;
+            }
+            if ($file = $request->file('video_poster')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['video_poster'] = $filename;
+            }  
+         
+            $video->update(); 
+            
+            return redirect()->route('videoserver');
+            
+        }else{
+            
+             $video = new Video_Trailer();
+             
+          
+            if ($file = $request->file('video')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['video']= $filename;
+            }
+            if ($file = $request->file('video_poster')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['video_poster'] = $filename;
+            } 
+            
+            $video->save();
+            
+            return redirect()->route('videoserver');
         }
-        if ($file = $request->file('video_poster')) {
-            $filename = time() . $file->getClientOriginalName();
-            $file->move('public', $filename);
-            $poster = $filename;
-        }
-        DB::update('update video__trailers set video = ? , video_poster = ? where id = ?',[$video, $poster, 1]);
-        return redirect()->route('videoserver');
+        
+        // DB::update('update video__trailers set video = ? , video_poster = ? where id = ?',[$video, $poster, 1]);
+       
      }
      public function store_trailer(Request $request){
-        if ($file = $request->file('trailer')) {
-            $filename = time() . $file->getClientOriginalName();
-            $file->move('public', $filename);
-            $trailer = $filename;
+
+        
+        $video = Video_Trailer::first();
+        
+        if($video){
+            
+             if ($file = $request->file('trailer')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['trailer'] = $filename;
+            }
+            if ($file = $request->file('trailer_poster')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['trailer_poster'] = $filename;
+            }  
+         
+            $video->update(); 
+            
+            return redirect()->route('videoserver');
+            
+        }else{
+            
+            $video = new Video_Trailer();
+            if ($file = $request->file('trailer')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['trailer']= $filename;
+            }
+            if ($file = $request->file('trailer_poster')) {
+                $filename = time() . $file->getClientOriginalName();
+                $file->move('public', $filename);
+                $video['trailer_poster'] = $filename;
+            } 
+            
+            $video->save();
+            
+            return redirect()->route('videoserver');
         }
-        if ($file = $request->file('trailer_poster')) {
-            $filename = time() . $file->getClientOriginalName();
-            $file->move('public', $filename);
-            $poster = $filename;
-        }
-        DB::update('update video__trailers set trailer = ? , trailer_poster = ? where id = ?',[$trailer, $poster, 1]);
-        return redirect()->route('videoserver');
+        
      }
  
      public function verify_code(verifycodeRequest $request){
         
         $code = $request->code;
-        $find = MailingList::where('code', $code)->get();
-    if($find){
-        if($updated_at->lessthen(Carbon::now())){
-
+         
+        $find = MailingList::where('code', $code)->whereDate('code_expiry_date','>=',Carbon::now())->first();
+        if($find){
+            $find->views_count =  ++$find->views_count;
+            $find->update();
+            return response()->json([
+                'status' => true,
+            ]);
         }
-        $data = MailingList::all();
-     if($code_expiry_at->lessThan(Carbon::now())){
-          return ['status' => true];
-     }
-    }
+       
+        
+    
 }
 }

@@ -30,6 +30,8 @@ Route::get('/view_sunscriber', [SubscriberController::class, 'view_sunscriber'])
 Route::delete('/delete_sunscriber{id}', [SubscriberController::class, 'delete_sunscriber'])->name('deletesubscribers');
 Route::get('/view_code', [MailingListController::class, 'index'])->name('codepage');
 Route::post('/send_code', [MailingListController::class, 'store_code'])->name('storecode');
+Route::delete('/delete_code/{id}', [MailingListController::class, 'delete_code'])->name('deletecode');
+Route::get('/regenerate_conut/{id}', [MailingListController::class, 'regenerate_conut'])->name('regeneratedcount');
 Route::get('/video_server', [VideoServerController::class, 'video_server'])->name('videoserver');
 Route::post('/store_video', [VideoServerController::class, 'store_video'])->name('storevideo');
 Route::post('/store_trailer', [VideoServerController::class, 'store_trailer'])->name('storrtrailer');

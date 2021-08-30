@@ -17,8 +17,9 @@ class CreateMailingListsTable extends Migration
             $table->id();
             $table->string('email');
             $table->string('code')->unique();
-            $table->string('days');
-            $table->string('time');
+            $table->string('regenerate_count')->default(0);
+            $table->string('code_expiry_date')->nullable();
+            $table->string('views_count')->default(0);
             $table->timestamps();
         });
     }

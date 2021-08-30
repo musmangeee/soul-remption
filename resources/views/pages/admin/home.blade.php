@@ -78,7 +78,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6 col-md-12 col-xl-5">
-                                    <h3 class="mb-2">89.87%</h3>
+                                    <h3 class="mb-2">{{ $views_count }}</h3>
 
                                 </div>
                             </div>
@@ -191,81 +191,33 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline mb-2">
-                        <h6 class="card-title mb-0">Inbox</h6>
+                        <h6 class="card-title mb-0">Subscriber</h6>
                         <div class="dropdown mb-2">
                             <button class="btn p-0" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton6">
-                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="edit-2" class="icon-sm mr-2"></i> <span class="">Edit</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="trash" class="icon-sm mr-2"></i> <span class="">Delete</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="printer" class="icon-sm mr-2"></i> <span class="">Print</span></a>
-                                <a class="dropdown-item d-flex align-items-center" href="#"><i data-feather="download" class="icon-sm mr-2"></i> <span class="">Download</span></a>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('codepage') }}"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
+                      
                             </div>
                         </div>
                     </div>
                     <div class="d-flex flex-column">
+                                                
                         <a href="#" class="d-flex align-items-center border-bottom pb-3">
-                            <div class="mr-3">
-                                <img src="../assets/images/faces/face2.jpg" class="rounded-circle wd-35" alt="user">
-                            </div>
+                           
                             <div class="w-100">
+                                
+                               @foreach($subscribers as $key => $subscriber)
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="text-body mb-2">Leonardo Payne</h6>
-                                    <p class="text-muted tx-12">12.30 PM</p>
+                                    <h6 class="text-body mb-2">{{ $subscriber->email }}</h6>
+                                    <p class="text-muted tx-12">{{ \Carbon\Carbon::parse($subscriber->created_at)->diffForhumans() }}</p>
                                 </div>
-                                <p class="text-muted tx-13">Hey! there I'm available...</p>
+                               
+                                @endforeach
                             </div>
                         </a>
-                        <a href="#" class="d-flex align-items-center border-bottom py-3">
-                            <div class="mr-3">
-                                <img src="../assets/images/faces/face3.jpg" class="rounded-circle wd-35" alt="user">
-                            </div>
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="text-body mb-2">Carl Henson</h6>
-                                    <p class="text-muted tx-12">02.14 AM</p>
-                                </div>
-                                <p class="text-muted tx-13">I've finished it! See you so..</p>
-                            </div>
-                        </a>
-                        <a href="#" class="d-flex align-items-center border-bottom py-3">
-                            <div class="mr-3">
-                                <img src="../assets/images/faces/face4.jpg" class="rounded-circle wd-35" alt="user">
-                            </div>
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="text-body mb-2">Jensen Combs</h6>
-                                    <p class="text-muted tx-12">08.22 PM</p>
-                                </div>
-                                <p class="text-muted tx-13">This template is awesome!</p>
-                            </div>
-                        </a>
-                        <a href="#" class="d-flex align-items-center border-bottom py-3">
-                            <div class="mr-3">
-                                <img src="../assets/images/faces/face5.jpg" class="rounded-circle wd-35" alt="user">
-                            </div>
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="text-body mb-2">Amiah Burton</h6>
-                                    <p class="text-muted tx-12">05.49 AM</p>
-                                </div>
-                                <p class="text-muted tx-13">Nice to meet you</p>
-                            </div>
-                        </a>
-                        <a href="#" class="d-flex align-items-center border-bottom py-3">
-                            <div class="mr-3">
-                                <img src="../assets/images/faces/face6.jpg" class="rounded-circle wd-35" alt="user">
-                            </div>
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between">
-                                    <h6 class="text-body mb-2">Yaretzi Mayo</h6>
-                                    <p class="text-muted tx-12">01.19 AM</p>
-                                </div>
-                                <p class="text-muted tx-13">Hey! there I'm available...</p>
-                            </div>
-                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -280,7 +232,7 @@
                                 <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton7">
-                                <a class="dropdown-item d-flex align-items-center" href="{{ route('findsubscribers') }}"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('codepage') }}"><i data-feather="eye" class="icon-sm mr-2"></i> <span class="">View</span></a>
 
                             </div>
                         </div>
@@ -290,22 +242,33 @@
                             <thead>
                             <tr>
                                 <th class="pt-0">#</th>
-                                <th class="pt-0">Project Name</th>
-                                <th class="pt-0">Start Date</th>
-                                <th class="pt-0">Due Date</th>
-                                <th class="pt-0">Status</th>
-                                <th class="pt-0">Assign</th>
+                                <th class="pt-0">Email</th>
+                                <th class="pt-0">Code</th>
+                                <th class="pt-0">Expiry Date</th>
+                                <th class="pt-0">Views</th>
+                                <th class="pt-0">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($latest_codes as $key => $code)
                             <tr>
-                                <td>{{ $key }}</td>
-                                <td>NobleUI jQuery</td>
-                                <td>01/01/2021</td>
-                                <td>26/04/2021</td>
-                                <td><span class="badge badge-danger">Released</span></td>
-                                <td>Leonardo Payne</td>
+                                <td>{{ ++$key }}</td>
+                                <td>{{ $code->email }}</td>
+                                <td>{{ $code->code }}</td>
+                                <td> {{ \Carbon\Carbon::parse($code->code_expiry_date)->diffForhumans() }}</td>
+                                <td>{{ $code->views_count }}</td>
+                                <td>
+                                    <form action="{{route('deletecode', $code->id)}}" method="POST" class="d-inline-block">
+                                        @csrf
+                                        @method('DELETE')
+  
+                                        <button type="submit" class="btn btn-danger btn-sm btn-icon"><i class="btn-icon-prepend" data-feather="trash"></i></button>
+                                        </form>
+                                        <a href="{{ route('regeneratedcount',$code->id) }}" class="btn btn-warning btn-icon btn-sm">
+                                          <i class="btn-icon-prepend" data-feather="edit"></i> 
+                                      </a>
+                                </td>
+                               
                             </tr>
                             @endforeach
 

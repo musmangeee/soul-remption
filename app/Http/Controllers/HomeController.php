@@ -26,11 +26,12 @@ class HomeController extends Controller
     public function index()
     {
         $subscribers_count = Subscriber::count();
+        $subscribers = Subscriber::latest()->take(5)->get();
         $codes_count = MailingList::count();
-
+        $views_count = MailingList::sum('views_count'); 
         $latest_codes =  MailingList::latest()->take(5)->get();
         $latest_subscribers =  Subscriber::latest()->take(5)->get();
 
-        return view('pages.admin.home', compact('subscribers_count', 'codes_count', 'latest_codes'));
+        return view('pages.admin.home', compact('subscribers_count', 'codes_count', 'latest_codes','views_count','subscribers'));
     }
 }

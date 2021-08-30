@@ -55,11 +55,16 @@
                                        {{ $data->code}}
                                     </td>
                                    <td>
-                                      <form action="{{route('deletesubscribers', $data->id)}}" method="POST">
+                                      
+                                      <form action="{{route('deletecode', $data->id)}}" method="POST" class="d-inline-block">
                                       @csrf
                                       @method('DELETE')
-                                      <button type="submit" class="btn btn-danger">Delete</button>
+
+                                      <button type="submit" class="btn btn-danger btn-sm btn-icon-text"><i class="btn-icon-prepend" data-feather="trash"></i>Delete</button>
                                       </form>
+                                      <a href="{{ route('regeneratedcount',$data->id) }}" class="btn btn-warning btn-icon-text btn-sm d-inline-block">
+                                        <i class="btn-icon-prepend" data-feather="edit"></i> Regenerate
+                                    </a>
                                    </td>
                                 </tr>
                     

@@ -5,13 +5,13 @@
     <!-- Header Starts -->
     
     <header id="watchvideo" class="full-screen-player">
-        <video style="width: 100%;" controls poster="{{ URL::asset('public/'. $users->video_poster)}}" autobuffer="true" >
-                <source src="{{ URL::asset('public/'. $users->video)}}" type="video/mp4">
+        <video id="movie" style="width: 100%;" controls poster="{{ URL::asset('public/'. ( $users->trailer_poster ?? ''))}}" autobuffer="true" controlsList="nodownload">
+                <source src="{{ URL::asset('public/'. ($users->video ?? ''))}}" type="video/mp4">
                 <!-- <source src="movie.ogg" type="video/ogg"> -->
                 Your browser does not support the video tag.
         </video>
     </header>
-    <!-- Header Ends -->
+    <!-- Header Ends -->    
 
     <!-- Corousel Section -->
     <section class="bg-purple credit-section">
