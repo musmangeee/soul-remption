@@ -36,5 +36,6 @@
 
 <script src="{{asset('assets/vendors/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
 <script src="{{asset('assets/js/tags-input.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 
 

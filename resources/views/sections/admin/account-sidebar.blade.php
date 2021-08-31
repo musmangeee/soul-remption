@@ -1,6 +1,6 @@
 <nav class="sidebar">
     <div class="sidebar-header">
-        <a href="#" class="sidebar-brand">
+        <a href="{{ route('home') }}" class="sidebar-brand">
             Soul<span>Redemp..</span>
         </a>
         <div class="sidebar-toggler not-active">
@@ -22,23 +22,23 @@
             <li class="nav-item">
             <li class="nav-item">
                 <a href="{{route('findsubscribers')}}" class="nav-link">
-                    <i class="link-icon" data-feather="message-square"></i>
+                <i class="link-icon" data-feather="user-plus"></i>
                     <span class="link-title">Subscribers</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{route('codepage')}}" class="nav-link">
-                    <i class="link-icon" data-feather="calendar"></i>
+                    <i class="link-icon" data-feather="send"></i>
                     <span class="link-title">Send Code</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{route('videoserver')}}" class="nav-link">
-                    <i class="link-icon" data-feather="calendar"></i>
+                <i class="link-icon" data-feather="upload-cloud"></i>
                     <span class="link-title">Video Server</span>
                 </a>
             </li>
-            <li class="nav-item nav-category">User</li>
+            <!-- <li class="nav-item nav-category">User</li>
             <li class="nav-item">
                 <a href="{{route('videoserver')}}" class="nav-link">
                     <i class="link-icon" data-feather="calendar"></i>
@@ -50,7 +50,7 @@
                     <i class="link-icon" data-feather="calendar"></i>
                     <span class="link-title">Change Password</span>
                 </a>
-            </li>
+            </li> -->
 
         </ul>
     </div>

@@ -16,10 +16,10 @@
                     </div>
                     <div class="dropdown-body">
                         <div class="d-flex align-items-center apps">
-                            <a href="pages/apps/chat.html"><i data-feather="message-square" class="icon-lg"></i><p>Chat</p></a>
-                            <a href="pages/apps/calendar.html"><i data-feather="calendar" class="icon-lg"></i><p>Calendar</p></a>
-                            <a href="pages/email/inbox.html"><i data-feather="mail" class="icon-lg"></i><p>Email</p></a>
-                            <a href="pages/general/profile.html"><i data-feather="instagram" class="icon-lg"></i><p>Profile</p></a>
+                            <a href="{{ route('home') }}"><i class="link-icon" data-feather="box"></i><p>Dashboard</p></a>
+                            <a href="{{route('findsubscribers')}}"> <i class="link-icon" data-feather="user-plus"></i><p>Subscribers</p></a>
+                            <a href="{{route('codepage')}}"><i class="link-icon" data-feather="send"></i><p>Send Code</p></a>
+                            <a href="{{route('videoserver')}}"><i class="link-icon" data-feather="upload-cloud"></i><p>VideoServer</p></a>
                         </div>
                     </div>
                     <div class="dropdown-footer d-flex align-items-center justify-content-center">
@@ -169,12 +169,13 @@
             </li>
             <li class="nav-item dropdown nav-profile">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{ asset('assets/images/faces/face1.jpg') }}" alt="{{ Auth::user()->name }}">
+                    <img src="{{ URL::asset('public/'. Auth::user()->avatar)}}" alt="{{ Auth::user()->name }}">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="profileDropdown">
                     <div class="dropdown-header d-flex flex-column align-items-center" >
                         <div class="figure mb-3">
-                            <img src="{{ asset('assets/images/faces/face1.jpg') }}" alt="{{ Auth::user()->name }}">
+                        <!-- {{ asset('assets/images/faces/face1.jpg') }} -->
+                            <img src="{{ URL::asset('public/'. Auth::user()->avatar)}}" alt="{{ Auth::user()->name }}">
                         </div>
                         <div class="info text-center">
                             <p class="name font-weight-bold mb-0">{{ Auth::user()->name }}</p>
@@ -190,7 +191,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link">
+                                <a href="{{route('edit_profile')}}" class="nav-link">
                                     <i data-feather="edit"></i>
                                     <span>Edit Profile</span>
                                 </a>

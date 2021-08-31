@@ -80,7 +80,6 @@ class VideoServerController extends Controller
             }  
          
             $video->update(); 
-            
             return redirect()->route('videoserver');
             
         }else{

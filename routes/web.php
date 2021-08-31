@@ -5,6 +5,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\MailingListController;
 use App\Http\Controllers\VideoServerController;
+use App\Http\Controllers\EditprofileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,10 @@ Route::get('/video_server', [VideoServerController::class, 'video_server'])->nam
 Route::post('/store_video', [VideoServerController::class, 'store_video'])->name('storevideo');
 Route::post('/store_trailer', [VideoServerController::class, 'store_trailer'])->name('storrtrailer');
 Route::post('/verify_code', [VideoServerController::class, 'verify_code'])->name('verifycode');
+Route::get('/edit_profile', [EditprofileController::class, 'edit_profile'])->name('edit_profile');
+Route::post('/update_profile', [EditprofileController::class, 'update_profile'])->name('update-profile');
+Route::post('/update_password', [EditprofileController::class, 'update_password'])->name('update-password');
+
 
 
 
