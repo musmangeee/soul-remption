@@ -112,7 +112,7 @@ class VideoServerController extends Controller
         if($find){
             $find->views_count =  ++$find->views_count;
             $find->update();
-            return response()->json([
+            return response()->json([   
                 'status' => true,
             ]);
         }

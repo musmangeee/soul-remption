@@ -90,7 +90,9 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "verify_code",
-            data: { code: $("input[name=code]").val() },
+            data: { 
+                code: $("input[name=code]").val()
+                  },
             success: function (data) {
                 if (data.status == true) {
                     $("#watchvideo").modal('hide');
