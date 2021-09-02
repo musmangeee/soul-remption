@@ -11,8 +11,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="appsDropdown">
                     <div class="dropdown-header d-flex align-items-center justify-content-between">
-                        <p class="mb-0 font-weight-medium">Web Apps</p>
-                        <a href="javascript:;" class="text-muted">Edit</a>
+                        <p class="mb-0 font-weight-medium">Quick Links</p>
+                        <a href="javascript:;" class="text-muted"></a>
                     </div>
                     <div class="dropdown-body">
                         <div class="d-flex align-items-center apps">
@@ -22,9 +22,9 @@
                             <a href="{{route('videoserver')}}"><i class="link-icon" data-feather="upload-cloud"></i><p>VideoServer</p></a>
                         </div>
                     </div>
-                    <div class="dropdown-footer d-flex align-items-center justify-content-center">
+                    <!-- <div class="dropdown-footer d-flex align-items-center justify-content-center">
                         <a href="javascript:;">View all</a>
-                    </div>
+                    </div> -->
                 </div>
             </li>
             <li class="nav-item dropdown nav-messages">
@@ -32,9 +32,9 @@
                     <i data-feather="mail"></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="messageDropdown">
-                    <div class="dropdown-header d-flex align-items-center justify-content-between">
-                        <p class="mb-0 font-weight-medium">9 New Messages</p>
-                        <a href="javascript:;" class="text-muted">Clear all</a>
+                    <!-- <div class="dropdown-header d-flex align-items-center justify-content-between">
+                        <p class="mb-0 font-weight-medium">Subscripers</p>
+                        <a href="javascript:;" class="text-muted"></a>
                     </div>
                     <div class="dropdown-body">
                         <a href="javascript:;" class="dropdown-item">
@@ -101,7 +101,7 @@
                     <div class="dropdown-footer d-flex align-items-center justify-content-center">
                         <a href="javascript:;">View all</a>
                     </div>
-                </div>
+                </div> -->
             </li>
             <li class="nav-item dropdown nav-notifications">
                 <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -111,7 +111,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="notificationDropdown">
-                    <div class="dropdown-header d-flex align-items-center justify-content-between">
+                    <!-- <div class="dropdown-header d-flex align-items-center justify-content-between">
                         <p class="mb-0 font-weight-medium">6 New Notifications</p>
                         <a href="javascript:;" class="text-muted">Clear all</a>
                     </div>
@@ -161,10 +161,10 @@
                                 <p class="sub-text text-muted">6 hrs ago</p>
                             </div>
                         </a>
-                    </div>
-                    <div class="dropdown-footer d-flex align-items-center justify-content-center">
+                    </div> -->
+                    <!-- <div class="dropdown-footer d-flex align-items-center justify-content-center">
                         <a href="javascript:;">View all</a>
-                    </div>
+                    </div> -->
                 </div>
             </li>
             <li class="nav-item dropdown nav-profile">
@@ -185,10 +185,10 @@
                     <div class="dropdown-body">
                         <ul class="profile-nav p-0 pt-3">
                             <li class="nav-item">
-                                <a href="pages/general/profile.html" class="nav-link">
+                                <!-- <a href="pages/general/profile.html" class="nav-link">
                                     <i data-feather="user"></i>
                                     <span>Profile</span>
-                                </a>
+                                </a> -->
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('edit_profile')}}" class="nav-link">

@@ -534,7 +534,7 @@
                                 </div>
                             </div>
                         </div>
-
+                  </form>
                         <p>DIRECTORS NOTE: The energy in this film is real. Those who are open to recieving will benefit
                             from watching Soul Redemption. This film will be the first of three I will be creating.
                             Please help by subscribing and sending to others. Thanks. Richard Burns</p>
