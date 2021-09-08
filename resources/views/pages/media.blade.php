@@ -69,15 +69,90 @@
     <!-- Synopsis Section -->
     <section class="bg-purple section-border-black">
         <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-lg-9">
             <div class="row">
                 <div class="col-md-6">
                     <h2 class="text-center">Film Synopsis</h2>
+                    <p >
+                    Soul Redemption is a dramatic, multi-dimensional love story that brings the spectator on a healing journey as they watch. The story follows the journey of Chiara, a therapist in a rut as she tries to write her second book, and who is seeking deep healing. Declan discovers Chiara as he channels her story for his own movie script, realizing that who he thought was his own character – turns out to be a real and alive person. Soul Redemption follows the intricate journey of confusion, pain, bliss and deep healing that the two lovers follow, as they move closer towards reunion with each other. The movie features authentic healers and enchanting healing music which deeply immerses the spectator in this inclusive, virtual healing experience.
+                    </p>
                 </div>
                 <div class="col-md-6">
                     <h2 class="text-center">Download Assets</h2>
+                    
+                    <p>Quicktime Movies:</p>
+                     <ol>
+                     <li><a href="">Offical Trailer</a></li>
+                     <li><a href="">Creators Interviews</a></li>
+                     <li><a href="">Creators Interviews</a></li>
+                    </ol> 
+                       <p>Bios</p>
+                    <ol>
+                     <li><a href="">Richard Burns - Director</a></li>
+                     <li><a href="">Val Tignini - Co-Creator</a></li>
+                     <li><a href="">Chris Colins - Producer</a></li>
+                    </ol> 
+                <p>Credits</p>
+                    <ul>
+                     <li><a href="">Cast list</a></li>
+                     <li><a href="">Crew List</a></li>
+                   </ul>
+
+                          <p>Images:</p>
+                    <ul>
+                     <li><a href="">Production Photo</a></li>
+                     <li><a href="">Movie Posters / Banners</a></li>
+                   </ul>            
+
+                          <p>About</p>
+                    <ul>
+                     <li><a href="">Visual Healing / Mission</a></li>
+                     <li><a href="">In The Flow Entertainment</a></li>
+                   </ul>
+                          <!-- <p>Also you'll see under we need</p>
+                          <p>Contact: richard.intheflow@gmail.com</p>
+                          <p>646.250.6065</p>
+                          <p>17 East 97th Street, 6c,</p>
+                          <p>NY NY 10029</p> -->
                 </div>
             </div>
+            </div>
+    </div>
         </div>
+    </section>
+    <!-- <---contact section----> 
+    <section class="bg-purple section-border-black">
+        <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="col-lg-9">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                    <div class=" col-lg-3">
+                    Contact:
+                  </div>
+                <div class="col-lg-9">
+                        richard.intheflow@gmail.com
+                        646.250.6065
+                          17 East 97th Street, 6c,
+                          NY NY 10029
+                     </div>
+                </div>
+                   
+                </div>
+                
+                <div class="col-md-6 pl-4">
+                    Social media Links
+                    <br>
+                <ul>
+                   <li> <a href='https://www.facebook.com/soulredemptionfilm'>Facebook</a></li>
+                 </ul>
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
     </section>
 
     <!-- Traier Section -->
