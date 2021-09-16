@@ -17,11 +17,11 @@
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-title text-primary">View Requesters</h6>
-                    <div class="text-right">
+                    <!-- <div class="text-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                       SEND CODE
                      </button>
-                        </div>
+                        </div> -->
                     <p class="card-description text-primary">All the View Requestors are listed here.</p>
                     <div class="table-responsive">
                         <table id="dataTableExample" class="table">
@@ -37,16 +37,22 @@
                                    Requester Reason
                                 </th>
                                 <th class="text-primary">
+                                   Code
+                                </th>
+                                <th class="text-primary">
+                                  Status
+                                </th>
+                                <th class="text-primary">
                                    Action
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
                                 
-                            @foreach($request_code as $data)
+                            @foreach($request_code as $key => $data)
                                 <tr>
                                     <td>
-                                       {{ $data->id }}
+                                       {{ ++$key }}
                                     </td>
                                     <td>
                                        {{ $data->email}}
@@ -54,8 +60,25 @@
                                     <td>
                                        {{ $data->reason}}
                                     </td>
+                                    <td>
+                                       {{ $data->code}}
+                                    </td>
+                                    @if($data->status == 'Approved')
+                                    <td>
+                                       <span class="badge badge-success">{{ $data->status}}</span>
+                                    </td>
+                                    @else
+                                    <td>
+                                    <span class="badge badge-info-muted">Pending</span>
+                                    </td>
+                                    @endif
                                    <td>
-                                      
+                                   <form action="{{route('approved.request', $data->id)}}" method="POST" class="d-inline-block">
+                                      @csrf
+                                      <input type="text" name="status" value="Approved" hidden="">
+                                      <input type="email" name="email" value="{{$data->email}}" hidden="">
+                                      <button type="submit" class="btn btn-success btn-sm btn-icon-text"><i class="btn-icon-prepend" data-feather="check"></i>Approved</button>
+                                      </form>
                                       <form action="{{route('delete.request', $data->id)}}" method="POST" class="d-inline-block">
                                       @csrf
                                       @method('DELETE')

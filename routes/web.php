@@ -44,6 +44,7 @@ Route::post('/update_password', [EditprofileController::class, 'update_password'
 Route::post('/request_code', [RequestcodeController::class, 'index'])->name('update-password');
 Route::get('/request_for_code', [RequestcodeController::class, 'request_code'])->name('request.code');
 Route::delete('/delete_request/{id}', [RequestcodeController::class, 'delete_request'])->name('delete.request');
+Route::post('/approved_request/{id}', [RequestcodeController::class, 'approved_request'])->name('approved.request');    
 
 
 

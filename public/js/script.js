@@ -83,6 +83,7 @@ $(document).ready(function () {
      });
 
     $("#send-code").on("submit", function (e) {
+        let code =   $(this).find("input[name=code]").val();
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -94,7 +95,7 @@ $(document).ready(function () {
             type: "POST",
             url: "verify_code",
             data: { 
-                code: $("input[name=code]").val()
+                code
                   },
             success: function (data) {
                 if (data.status == true) {

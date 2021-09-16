@@ -1,3 +1,4 @@
+@include('modals.request-code')
 <!doctype html>
 <html lang="en">
 <head>

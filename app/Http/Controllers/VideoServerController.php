@@ -106,6 +106,7 @@ class VideoServerController extends Controller
      public function verify_code(verifycodeRequest $request){
         
         $code = $request->code;
+         
         $find = MailingList::where('code', $code)->whereDate('code_expiry_date','>=',Carbon::now())->first();
         if($find){
             $find->views_count =  ++$find->views_count;

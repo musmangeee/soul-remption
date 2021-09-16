@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Requestcode extends Model
 {
     use HasFactory;
-    protected $fillable = ['email', 'reason'];
+    protected $fillable = ['email', 'reason', 'code', 'status', 'code_expiry_date'];
 }

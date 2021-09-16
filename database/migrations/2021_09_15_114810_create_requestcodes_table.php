@@ -17,6 +17,9 @@ class CreateRequestcodesTable extends Migration
             $table->id();
             $table->string('email')->nullable();
             $table->string('reason')->nullable();
+            $table->string('code')->nullable();
+            $table->string('status')->nullable();
+            $table->string('code_expiry_date')->nullable();
             $table->timestamps();
         });
     }

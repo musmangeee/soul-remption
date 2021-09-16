@@ -9,7 +9,7 @@
 				<h4 class="modal-title w-100">Awesome!</h4>	
 			</div>
 			<div class="modal-body">
-				<p class="text-center">You Are Send Requested For Code Successfully!. Please Check Your Email After Some Time Thanku!</p>
+				<p class="text-center">You Are Send Requeste For Code Successfully!.Please Check Your Email You Get Code After Some Time Thanku!</p>
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-success btn-block" data-dismiss="modal">OK</button>

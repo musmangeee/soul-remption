@@ -52,7 +52,7 @@ class MailingListController extends Controller
         $mailing_list = MailingList::findOrFail($id);
         $mailing_list->regenerate_count = ++$mailing_list->regenerate_count;
         $mailing_list->code_expiry_date = Carbon::now()->addDays(2);
-
+        
         $mailing_list->update();
         return redirect()->route('codepage');
     }
