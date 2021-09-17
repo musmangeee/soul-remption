@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 col-12 user-name">
                     <h1 class="mb-1">Welcome!</h1>
-                    <p class="mb-1">Enter Code To Watch The Video</p>
+                    <p class="mb-1">Enter Code to Watch Soul Redemption</p>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-12 form-input">
                     <div class="alert alert-danger mb-3" id="watch_video_alert" role="alert"  style="display: none">
@@ -28,7 +28,7 @@
                       </button>
                 </div>
                 <div class="col-lg-12 col-sm-12 col-12 link-part">
-                    <p class="text-size">If You Have Any Issue Then Contact Our Team!<br> SoulRedemption@gmail.com</p>
+                    <p class="text-size">To watch film, please request code from Ricahrd Burns at<br> richard.intheflow@gmail.com</p>
                 </div>
             </div>
         </div>

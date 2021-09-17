@@ -14,6 +14,11 @@ class RequestcodeController extends Controller
         $request_code->email = $request->email;
         $request_code->reason = $request->reason;
         $request_code->save();
+        $email = $request_code->email;
+        $details = [
+            'message' =>  "Thank you for your request for the code. We will be with you soon regarding your request!",
+        ];
+        \Mail::to($email)->send(new \App\Mail\RequestMail($details));
         return response()->json([   
             'status' => true,
         ]);

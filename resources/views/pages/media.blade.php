@@ -32,7 +32,7 @@
                 <div class="col-md-8">
                     <div class="container text-right">
                         <h1>Soul <br>Redemption</h1>
-                        <p>The film that can heal you while you watch and heal</p>
+                        <p>The film that can heal you while you Watch....and heal</p>
                     </div>
                 </div>
             </div>

@@ -1,18 +1,16 @@
 <?php
-  
+
 namespace App\Mail;
-  
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-  
-class MyTestMail extends Mailable
+
+class RequestMail extends Mailable
 {
     use Queueable, SerializesModels;
-  
     public $details;
-  
     /**
      * Create a new message instance.
      *
@@ -22,7 +20,7 @@ class MyTestMail extends Mailable
     {
         $this->details = $details;
     }
-  
+
     /**
      * Build the message.
      *
@@ -31,7 +29,6 @@ class MyTestMail extends Mailable
     public function build()
     {
         return $this->subject('Welcome to Soul Redemption')
-                    ->view('emails.myTestMail');
-                    
+        ->view('emails.requestcode');
     }
 }
